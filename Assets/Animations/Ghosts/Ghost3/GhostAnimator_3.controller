@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost2WalkLeft
+  m_Name: Ghost3WalkLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a47edf33bbb1a4d2596b235937227b1f, type: 2}
+  m_Motion: {fileID: 7400000, guid: ed64c53cd921943d7b69ca93d482d243, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -34,7 +34,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost2WalkUp
+  m_Name: Ghost3WalkUp
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6e42cd5afbe6047c9b3307d4ad6e7ecf, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7649226b717294570824450b2e46e52f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -132,7 +132,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost2WalkDown
+  m_Name: Ghost3WalkDown
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -146,7 +146,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3486224b713eb45a58ab207b224a909c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 29f8361a849f34beb8634b936c6008f2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -185,7 +185,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GhostAnimator_2
+  m_Name: GhostAnimator_3
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -341,7 +341,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost2WalkRight
+  m_Name: Ghost3WalkRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -355,7 +355,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d5c8407eaab6d45e6bf472843ca42ab6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 578deb3c3119d4fc38b78107289a0f62, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
