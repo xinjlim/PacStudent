@@ -13741,6 +13741,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13791,7 +13792,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13822,6 +13823,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3578a817eb548f0838c6c33373a047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outsideCorner: {fileID: 3533849709516978710, guid: 635771b0910584ba89aad8bfc7ec297e, type: 3}
+  outsideWall: {fileID: 4613914347586796009, guid: b76ab997c2c6c48299d695bd1d5a2746, type: 3}
+  insideCorner: {fileID: 5752658705146915586, guid: b9914bac1939a4483a917baff8c7d698, type: 3}
+  insideWall: {fileID: 1265045734482597328, guid: b40eb61ebe3ce417682e5aa91e8e2c25, type: 3}
+  normalPellet: {fileID: 1452253783601987147, guid: 5d066127d4da549be9a1a18094034bcd, type: 3}
+  powerPellet: {fileID: 7096693008442352680, guid: 1c3c20d6dc5204ae0a261d1f4475a482, type: 3}
+  tJunction: {fileID: 2346631823072412213, guid: 8ec659b05fa4f4ad1b36ebda9f0658dd, type: 3}
 --- !u!1 &526274649
 GameObject:
   m_ObjectHideFlags: 0
@@ -21955,7 +21975,7 @@ GameObject:
   - component: {fileID: 814718347}
   m_Layer: 0
   m_Name: 'Top-right Layout '
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31273,7 +31293,7 @@ GameObject:
   - component: {fileID: 1151764966}
   m_Layer: 0
   m_Name: Top-left Layout
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33963,7 +33983,7 @@ GameObject:
   - component: {fileID: 1219621692}
   m_Layer: 0
   m_Name: Bottom-left Layout
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54352,7 +54372,7 @@ GameObject:
   - component: {fileID: 1953195990}
   m_Layer: 0
   m_Name: 'Bottom-right Layout '
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
