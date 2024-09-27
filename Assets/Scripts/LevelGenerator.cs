@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
@@ -19,6 +18,7 @@ public class LevelGenerator : MonoBehaviour
     private GameObject powerPellet;
     [SerializeField]
     private GameObject tJunction;
+    private Camera camera;
     int[,] levelMap =
         {
             {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
@@ -40,6 +40,8 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camera = GetComponent<Camera>();
+        camera.orthographicSize = levelMap.GetLength(0) + 1;
         GameObject[] layouts = GameObject.FindGameObjectsWithTag("Layout");
         foreach (GameObject layout in layouts) {
             Destroy(layout);
@@ -75,21 +77,20 @@ public class LevelGenerator : MonoBehaviour
                         break;
                     case 3:
                         newItem = Instantiate(insideCorner, new Vector3(x, -y), Quaternion.identity);
-                        if (x > 0 && y > 0 && y+1 < levelMap.GetLength(1) 
-                            && (levelMap[y+1,x] == 3 ||levelMap[y+1,x] == 4) 
-                            && (levelMap[y,x-1] == 3 ||levelMap[y,x-1] == 4)) {
-                                newItem.transform.Rotate(0, 0, 270);
-                        }
-
                         if (y > 0 && x+1 < levelMap.GetLength(0)-1 
                             && (levelMap[y,x+1] == 3 || levelMap[y,x+1] == 4)
-                             && (levelMap[y-1,x] == 4 || levelMap[y-1,x] == 3)) {
+                            && (levelMap[y-1,x] == 3 || levelMap[y-1,x] == 4)) {
                             newItem.transform.Rotate(0, 0, 90);
                         } 
-
-                        if (x > 0 && y > 0
-                            && (levelMap[y,x-1] == 3 || levelMap[y,x-1] == 4) && (levelMap[y-1,x] == 4 || levelMap[y-1,x] == 3)) {
+                        else if (x > 0 && y > 0
+                            && (levelMap[y,x-1] == 3 || levelMap[y,x-1] == 4) 
+                            && (levelMap[y-1,x] == 3 || levelMap[y-1,x] == 4)) {
                             newItem.transform.Rotate(0, 0, 180);
+                        }
+                        else if (x > 0 && y+1 < levelMap.GetLength(1) 
+                            && (levelMap[y+1,x] == 3 ||levelMap[y+1,x] == 4) 
+                            && (levelMap[y,x-1] == 3 ||levelMap[y,x-1] == 4)) {
+                            newItem.transform.Rotate(0, 0, 270);
                         }
 
                         break;
@@ -99,18 +100,15 @@ public class LevelGenerator : MonoBehaviour
                         if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 3 && levelMap[y,x+1] == 3) {
                             newItem.transform.Rotate(0, 0, 90);
                         }
-
-                        else if (x > 0 && x < levelMap.GetLength(1) && levelMap[y,x-1] == 3 && levelMap[y,x+1] == 4) {
+                        else if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 3 && levelMap[y,x+1] == 4) {
                             newItem.transform.Rotate(0, 0, 90);
                         }
-
                         else if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 4 && levelMap[y,x+1] == 3) {
                             newItem.transform.Rotate(0, 0, 90);
                         }
-
                         else if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 4 && levelMap[y,x+1] == 4) {
                             newItem.transform.Rotate(0, 0, 90);
-                        }
+                        } 
 
                         break;
                     case 5:
