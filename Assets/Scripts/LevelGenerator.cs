@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    private Camera camera;
     [SerializeField]
     private GameObject outsideCorner;
     [SerializeField]
@@ -48,36 +48,50 @@ public class LevelGenerator : MonoBehaviour
         for (int y = 0; y < levelMap.GetLength(0); ++y) {
             for (int x = 0; x < levelMap.GetLength(1); ++x) {
                 int value = levelMap[y,x];
+                GameObject newItem;
                 switch (value) {
                     case 1: 
-                        Instantiate(outsideCorner, new Vector3(x, -y), Quaternion.identity); 
+                        newItem = Instantiate(outsideCorner, new Vector3(x, -y), Quaternion.identity); 
+
+                        if (y > 0 && x+1 < levelMap.GetLength(1) && levelMap[y-1, x] == 2 && levelMap[y, x+1] == 2) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        } 
+                        else if (x > 0 && y > 0 && levelMap[y,x-1] == 2 && levelMap[y-1,x] == 2) {
+                            newItem.transform.Rotate(0, 0, 180);
+                        }
+                        else if (x > 0 && y < levelMap.GetLength(0) && levelMap[y,x-1] == 2 && levelMap[y+1,x] == 2) {
+                            newItem.transform.Rotate(0, 0, 270);
+                        }
+
                         break;
                     case 2: 
-                        Instantiate(outsideWall, new Vector3(x, -y), Quaternion.identity);
+                        newItem = Instantiate(outsideWall, new Vector3(x, -y), Quaternion.identity);
+                        if (y == 0) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        } else if (levelMap[y+1, x] != 2 && levelMap[y-1, x] != 2) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        }
                         break;
                     case 3:
-                        Instantiate(insideCorner, new Vector3(x, -y), Quaternion.identity);
+                        newItem = Instantiate(insideCorner, new Vector3(x, -y), Quaternion.identity);
                         break;
                     case 4:
-                        Instantiate(insideWall, new Vector3(x, -y), Quaternion.identity);
+                        newItem = Instantiate(insideWall, new Vector3(x, -y), Quaternion.identity);
                         break;
                     case 5:
-                        Instantiate(normalPellet, new Vector3(x, -y), Quaternion.identity);
+                        newItem = Instantiate(normalPellet, new Vector3(x, -y), Quaternion.identity);
                         break;
                     case 6:
-                        Instantiate(powerPellet, new Vector3(x, -y), Quaternion.identity);
+                        newItem = Instantiate(powerPellet, new Vector3(x, -y), Quaternion.identity);
                         break;
                     case 7: 
-                        Instantiate(tJunction, new Vector3(x, -y), Quaternion.identity);
+                        newItem = Instantiate(tJunction, new Vector3(x, -y), Quaternion.identity);
                         break;
                     default:
                         break;
                 }
             }
         }
-
-        camera = GetComponent<Camera>();
-        camera.orthographicSize = levelMap.GetLength(0) + 1;
     }
 
     // Update is called once per frame
