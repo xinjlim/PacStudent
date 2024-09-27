@@ -13741,6 +13741,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13822,6 +13823,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455a35f7627074e90a2e8ad950fc7dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outsideCorner: {fileID: 3488305791624488910, guid: 3f5df6b34db6942138faa49a3bf3424d, type: 3}
+  outsideWall: {fileID: 4997418075560357891, guid: 87dd9e03ff155429da1b0e0ff33e643d, type: 3}
+  insideCorner: {fileID: 1665725789570711836, guid: d8099a2250180414996a1c98d705cf98, type: 3}
+  insideWall: {fileID: 945668808622370514, guid: c5aca2da9b2194a10b09ede394ee92fc, type: 3}
+  normalPellet: {fileID: 4838779206422550119, guid: e3cd9a90adfa441b79ea4dd9b340d15c, type: 3}
+  powerPellet: {fileID: 2032097052833772675, guid: 4dd545346b24a4671be8be40ff78e36f, type: 3}
+  tJunction: {fileID: 861970168230493382, guid: 258c0a7aac1724f01b1bfe94cbda8789, type: 3}
 --- !u!1 &526274649
 GameObject:
   m_ObjectHideFlags: 0
@@ -21955,7 +21975,7 @@ GameObject:
   - component: {fileID: 814718347}
   m_Layer: 0
   m_Name: 'Top-right Layout '
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31273,7 +31293,7 @@ GameObject:
   - component: {fileID: 1151764966}
   m_Layer: 0
   m_Name: Top-left Layout
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33963,7 +33983,7 @@ GameObject:
   - component: {fileID: 1219621692}
   m_Layer: 0
   m_Name: Bottom-left Layout
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54352,7 +54372,7 @@ GameObject:
   - component: {fileID: 1953195990}
   m_Layer: 0
   m_Name: 'Bottom-right Layout '
-  m_TagString: Untagged
+  m_TagString: Layout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
