@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InputManager : MonoBehaviour
 {
@@ -21,15 +22,15 @@ public class InputManager : MonoBehaviour
             tweener.AddTween(transform, transform.position, new Vector3(-4.44f, 10.7f, 0.0f), 2.5f);
         }
 
-        if (transform.position == new Vector3(-4.44f, 10.7f, 0.0f)) {
+        else if (transform.position == new Vector3(-4.44f, 10.7f, 0.0f)) {
             tweener.AddTween(transform, transform.position, new Vector3(-4.44f, 6.7f, 0.0f), 2.0f);
         }   
 
-        if (transform.position == new Vector3(-4.44f, 6.7f, 0.0f)) {
+        else if (transform.position == new Vector3(-4.44f, 6.7f, 0.0f)) {
             tweener.AddTween(transform, transform.position, new Vector3(-9.45f, 6.7f, 0.0f), 2.5f);
         } 
 
-        if (transform.position == new Vector3(-9.45f, 6.7f, 0.0f)) {
+        else if (transform.position == new Vector3(-9.45f, 6.7f, 0.0f)) {
             tweener.AddTween(transform, transform.position, new Vector3(-9.45f, 10.7f, 0.0f), 2.0f);
         } 
     }

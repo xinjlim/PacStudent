@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip intro;
-    public AudioClip normalState;
+    public AudioSource background;
+    public AudioSource pacState;
+    [SerializeField]
+    private AudioClip intro;
+    [SerializeField]
+    private AudioClip normalState;
+    [SerializeField]
+    private AudioClip moving;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource.clip = intro;
-        audioSource.Play();
+        background.clip = intro;
+        background.Play();
         Invoke(nameof(PlayNormalState), intro.length);
+
+         pacState.clip = moving;
     }
 
     // Update is called once per frame
@@ -22,8 +29,19 @@ public class MusicManager : MonoBehaviour
     }
 
     private void PlayNormalState() {
-        audioSource.clip = normalState;
-        audioSource.loop = true;
-        audioSource.Play();
+        background.clip = normalState;
+        background.loop = true;
+        background.Play();
+    }
+
+    public void PlayMovingAudio(bool isMoving) {
+        if (isMoving && !pacState.isPlaying) {
+            pacState.Play();
+        } 
+        
+        else if (!isMoving && pacState.isPlaying) {
+            pacState.Stop();
+        }
+        
     }
 }
