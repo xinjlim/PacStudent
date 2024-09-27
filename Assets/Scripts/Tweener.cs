@@ -7,6 +7,8 @@ public class Tweener : MonoBehaviour
     private Tween activeTween;
     private MusicManager musicManager;
     private Vector3 prevPos;
+    [SerializeField]
+    private Animator animatorController;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,31 @@ public class Tweener : MonoBehaviour
             bool isMoving = false;
             if(activeTween.Target.position != prevPos) {
                 isMoving = true;
-                prevPos = activeTween.Target.position;
+
+                Vector3 currentPos = activeTween.Target.position;
+                float x = currentPos.x - prevPos.x;
+                float y = currentPos.y - prevPos.y;
+                
+                animatorController.ResetTrigger("GoRight");
+                animatorController.ResetTrigger("GoLeft");
+                animatorController.ResetTrigger("GoUp");
+                animatorController.ResetTrigger("GoDown");
+
+                if (y == 0) {
+                    if (x > 0) {
+                        animatorController.SetTrigger("GoRight");
+                    } else {
+                        animatorController.SetTrigger("GoLeft");
+                    }
+                } else {
+                    if (y > 0) {
+                        animatorController.SetTrigger("GoUp");
+                    } else {
+                        animatorController.SetTrigger("GoDown");
+                    }
+                }
+
+                prevPos = currentPos;
             } else {
                 isMoving = false;
             }
