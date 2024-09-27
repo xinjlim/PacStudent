@@ -59,7 +59,7 @@ public class LevelGenerator : MonoBehaviour
                         else if (x > 0 && y > 0 && levelMap[y,x-1] == 2 && levelMap[y-1,x] == 2) {
                             newItem.transform.Rotate(0, 0, 180);
                         }
-                        else if (x > 0 && y < levelMap.GetLength(0) && levelMap[y,x-1] == 2 && levelMap[y+1,x] == 2) {
+                        else if (x > 0 && y+1 < levelMap.GetLength(0) && levelMap[y,x-1] == 2 && levelMap[y+1,x] == 2) {
                             newItem.transform.Rotate(0, 0, 270);
                         }
 
@@ -68,15 +68,50 @@ public class LevelGenerator : MonoBehaviour
                         newItem = Instantiate(outsideWall, new Vector3(x, -y), Quaternion.identity);
                         if (y == 0) {
                             newItem.transform.Rotate(0, 0, 90);
-                        } else if (levelMap[y+1, x] != 2 && levelMap[y-1, x] != 2) {
+                        } 
+                        else if (levelMap[y+1, x] != 2 && levelMap[y-1, x] != 2) {
                             newItem.transform.Rotate(0, 0, 90);
                         }
                         break;
                     case 3:
                         newItem = Instantiate(insideCorner, new Vector3(x, -y), Quaternion.identity);
+                        if (x > 0 && y > 0 && y+1 < levelMap.GetLength(1) 
+                            && (levelMap[y+1,x] == 3 ||levelMap[y+1,x] == 4) 
+                            && (levelMap[y,x-1] == 3 ||levelMap[y,x-1] == 4)) {
+                                newItem.transform.Rotate(0, 0, 270);
+                        }
+
+                        if (y > 0 && x+1 < levelMap.GetLength(0)-1 
+                            && (levelMap[y,x+1] == 3 || levelMap[y,x+1] == 4)
+                             && (levelMap[y-1,x] == 4 || levelMap[y-1,x] == 3)) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        } 
+
+                        if (x > 0 && y > 0
+                            && (levelMap[y,x-1] == 3 || levelMap[y,x-1] == 4) && (levelMap[y-1,x] == 4 || levelMap[y-1,x] == 3)) {
+                            newItem.transform.Rotate(0, 0, 180);
+                        }
+
                         break;
                     case 4:
                         newItem = Instantiate(insideWall, new Vector3(x, -y), Quaternion.identity);
+
+                        if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 3 && levelMap[y,x+1] == 3) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        }
+
+                        else if (x > 0 && x < levelMap.GetLength(1) && levelMap[y,x-1] == 3 && levelMap[y,x+1] == 4) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        }
+
+                        else if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 4 && levelMap[y,x+1] == 3) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        }
+
+                        else if (x > 0 && x+1 < levelMap.GetLength(1) && levelMap[y,x-1] == 4 && levelMap[y,x+1] == 4) {
+                            newItem.transform.Rotate(0, 0, 90);
+                        }
+
                         break;
                     case 5:
                         newItem = Instantiate(normalPellet, new Vector3(x, -y), Quaternion.identity);
