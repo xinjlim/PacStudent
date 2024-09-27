@@ -13832,16 +13832,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455a35f7627074e90a2e8ad950fc7dc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d3578a817eb548f0838c6c33373a047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outsideCorner: {fileID: 3488305791624488910, guid: 3f5df6b34db6942138faa49a3bf3424d, type: 3}
-  outsideWall: {fileID: 4997418075560357891, guid: 87dd9e03ff155429da1b0e0ff33e643d, type: 3}
-  insideCorner: {fileID: 1665725789570711836, guid: d8099a2250180414996a1c98d705cf98, type: 3}
-  insideWall: {fileID: 945668808622370514, guid: c5aca2da9b2194a10b09ede394ee92fc, type: 3}
-  normalPellet: {fileID: 4838779206422550119, guid: e3cd9a90adfa441b79ea4dd9b340d15c, type: 3}
-  powerPellet: {fileID: 2032097052833772675, guid: 4dd545346b24a4671be8be40ff78e36f, type: 3}
-  tJunction: {fileID: 861970168230493382, guid: 258c0a7aac1724f01b1bfe94cbda8789, type: 3}
+  outsideCorner: {fileID: 3533849709516978710, guid: 493e3545247fe4b5aa216a3b2386409a, type: 3}
+  outsideWall: {fileID: 4613914347586796009, guid: be6839cc35c864dffa101b4d67b56125, type: 3}
+  insideCorner: {fileID: 6498698807173777018, guid: b9914bac1939a4483a917baff8c7d698, type: 3}
+  insideWall: {fileID: 1265045734482597328, guid: 23c7775847ef24de09d576276286e67b, type: 3}
+  normalPellet: {fileID: 1452253783601987147, guid: 69aca201a51404b328fb79d9ef777703, type: 3}
+  powerPellet: {fileID: 7096693008442352680, guid: 595cad78461324d76814e1af68c57988, type: 3}
+  tJunction: {fileID: 2346631823072412213, guid: 5cd92cc68a8484adba50fdad2a19e087, type: 3}
 --- !u!1 &526274649
 GameObject:
   m_ObjectHideFlags: 0
