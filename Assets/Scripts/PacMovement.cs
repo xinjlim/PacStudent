@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tweener : MonoBehaviour
+public class PacMovement : MonoBehaviour
 {
+    
     private Tween activeTween;
     private MusicManager musicManager;
     private Vector3 prevPos;

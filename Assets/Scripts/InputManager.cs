@@ -7,11 +7,11 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-    private Tweener tweener;
+    private PacMovement movement;
     // Start is called before the first frame update
     void Start()
     {
-        tweener = GetComponent<Tweener>();
+        movement = GetComponent<PacMovement>();
     }
 
     // Update is called once per frame
@@ -19,19 +19,19 @@ public class InputManager : MonoBehaviour
     {
         Transform transform = player.transform;
         if (transform.position == new Vector3(-9.45f, 10.7f, 0.0f)) {
-            tweener.AddTween(transform, transform.position, new Vector3(-4.44f, 10.7f, 0.0f), 2.5f);
+            movement.AddTween(transform, transform.position, new Vector3(-4.44f, 10.7f, 0.0f), 2.5f);
         }
 
         else if (transform.position == new Vector3(-4.44f, 10.7f, 0.0f)) {
-            tweener.AddTween(transform, transform.position, new Vector3(-4.44f, 6.7f, 0.0f), 2.0f);
+            movement.AddTween(transform, transform.position, new Vector3(-4.44f, 6.7f, 0.0f), 2.0f);
         }   
 
         else if (transform.position == new Vector3(-4.44f, 6.7f, 0.0f)) {
-            tweener.AddTween(transform, transform.position, new Vector3(-9.45f, 6.7f, 0.0f), 2.5f);
+            movement.AddTween(transform, transform.position, new Vector3(-9.45f, 6.7f, 0.0f), 2.5f);
         } 
 
         else if (transform.position == new Vector3(-9.45f, 6.7f, 0.0f)) {
-            tweener.AddTween(transform, transform.position, new Vector3(-9.45f, 10.7f, 0.0f), 2.0f);
+            movement.AddTween(transform, transform.position, new Vector3(-9.45f, 10.7f, 0.0f), 2.0f);
         } 
     }
 }
