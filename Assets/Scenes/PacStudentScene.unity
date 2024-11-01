@@ -14456,7 +14456,6 @@ GameObject:
   - component: {fileID: 543208891}
   - component: {fileID: 543208892}
   - component: {fileID: 543208890}
-  - component: {fileID: 543208894}
   m_Layer: 0
   m_Name: Audio and Visual Controller
   m_TagString: Untagged
@@ -14690,19 +14689,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &543208894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543208888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e170b79e00134b478c246f6ca0b97cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1002655845}
 --- !u!1 &543890790
 GameObject:
   m_ObjectHideFlags: 0
