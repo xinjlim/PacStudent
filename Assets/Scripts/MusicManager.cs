@@ -7,19 +7,14 @@ public class MusicManager : MonoBehaviour
     public AudioSource background;
     public AudioSource pacState;
     [SerializeField]
-    private AudioClip intro;
-    [SerializeField]
     private AudioClip normalState;
     [SerializeField]
     private AudioClip moving;
     // Start is called before the first frame update
     void Start()
     {
-        background.clip = intro;
-        background.Play();
-        Invoke(nameof(PlayNormalState), intro.length);
-
-         pacState.clip = moving;
+        PlayNormalState();
+        pacState.clip = moving;
     }
 
     // Update is called once per frame
