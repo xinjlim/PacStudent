@@ -20,4 +20,8 @@ public class UIManager : MonoBehaviour
     public void LoadFirstLevel() {
         SceneManager.LoadSceneAsync(1);
     }
+
+    public void ExitGame() {
+        SceneManager.LoadSceneAsync(0);
+    }
 }
