@@ -18,8 +18,8 @@ public class LevelGenerator : MonoBehaviour
     private GameObject powerPellet;
     [SerializeField]
     private GameObject tJunction;
-    private Camera camera;
-    int[,] levelMap =
+    private Camera mainCamera;
+    public int[,] levelMap =
         {
             {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
             {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
@@ -37,11 +37,11 @@ public class LevelGenerator : MonoBehaviour
             {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
             {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
         };
-    // Start is called before the first frame update
+    
     void Start()
     {
-        camera = GetComponent<Camera>();
-        camera.orthographicSize = levelMap.GetLength(0) + 1;
+        mainCamera = GetComponent<Camera>();
+        mainCamera.orthographicSize = levelMap.GetLength(0) + 1;
         GameObject[] layouts = GameObject.FindGameObjectsWithTag("Layout");
         foreach (GameObject layout in layouts) {
             Destroy(layout);
@@ -125,11 +125,5 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
