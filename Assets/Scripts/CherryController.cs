@@ -50,7 +50,7 @@ public class CherryController : MonoBehaviour
                 spawnPos = mainCam.ViewportToWorldPoint(new Vector2(-0.1f, y));
                 endPos = mainCam.ViewportToWorldPoint(new Vector2(1.1f, y));
                 break;
-            case 1: // right
+            case 1: // right 
                 y = Random.Range(0f, 1f);
                 spawnPos = mainCam.ViewportToWorldPoint(new Vector2(1.1f, y));
                 endPos = mainCam.ViewportToWorldPoint(new Vector2(-0.1f, y));
