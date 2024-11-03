@@ -118,12 +118,15 @@ public class PacStudentController : MonoBehaviour
         float y = endPos.y - startPos.y;
         float x = endPos.x - startPos.x;
 
+        animatorController.ResetTrigger("Stop");
         animatorController.ResetTrigger("GoRight");
         animatorController.ResetTrigger("GoLeft");
         animatorController.ResetTrigger("GoUp");
         animatorController.ResetTrigger("GoDown");
 
-        if (y == 0) {
+        if (!isMoving) {
+            animatorController.SetTrigger("Stop");
+        } else if (y == 0) {
             animatorController.SetTrigger(x > 0 ? "GoRight" : "GoLeft");
         } else {
             animatorController.SetTrigger(y > 0 ? "GoUp" : "GoDown");
