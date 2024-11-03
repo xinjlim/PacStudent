@@ -19559,6 +19559,7 @@ MonoBehaviour:
   pacState: {fileID: 543208892}
   normalState: {fileID: 8300000, guid: 9c427be6b878141879fba2f52a539549, type: 3}
   moving: {fileID: 8300000, guid: eb7b085c7896b4413913a6e406ddf5b4, type: 3}
+  eating: {fileID: 8300000, guid: fd9f407638c434a7bafca4087148a5a4, type: 3}
 --- !u!82 &543208891
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19572,7 +19573,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19669,7 +19670,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -57,7 +57,7 @@ public class PacMovement : MonoBehaviour
             } else {
                 isMoving = false;
             }
-            musicManager.PlayMovingAudio(isMoving);
+            // musicManager.PlayMovingAudio(isMoving);
 
             if (activeTween.Target.position == activeTween.EndPos) { activeTween = null; }
         }

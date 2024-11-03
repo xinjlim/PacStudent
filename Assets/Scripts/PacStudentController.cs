@@ -84,7 +84,7 @@ public class PacStudentController : MonoBehaviour
                 isMoving = false;
             }
             PlayAnimation();
-            musicManager.PlayMovingAudio(isMoving);
+            musicManager.PlayMovingAudio(isMoving, isEating(mapRow, mapCol));
         }
     }
 
@@ -112,6 +112,11 @@ public class PacStudentController : MonoBehaviour
 
         int sprite = levelMap[row, col];
         return sprite == 0 || sprite == 5 || sprite == 6;
+    }
+
+    private bool isEating(int row, int col) {
+        int sprite = levelMap[row, col];
+        return sprite == 5 || sprite == 6;
     }
 
     private void PlayAnimation() {

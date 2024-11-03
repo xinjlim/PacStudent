@@ -10,11 +10,12 @@ public class MusicManager : MonoBehaviour
     private AudioClip normalState;
     [SerializeField]
     private AudioClip moving;
+    [SerializeField]
+    private AudioClip eating;
     // Start is called before the first frame update
     void Start()
     {
         PlayNormalState();
-        pacState.clip = moving;
     }
 
     // Update is called once per frame
@@ -29,12 +30,14 @@ public class MusicManager : MonoBehaviour
         background.Play();
     }
 
-    public void PlayMovingAudio(bool isMoving) {
-        if (isMoving && !pacState.isPlaying) {
+    public void PlayMovingAudio(bool isMoving, bool isEating) {
+        if (isMoving && !pacState.isPlaying && !isEating) {
+            pacState.clip = moving;
             pacState.Play();
-        } 
-        
-        else if (!isMoving && pacState.isPlaying) {
+        } else if (isMoving && !pacState.isPlaying && isEating) {
+            pacState.clip = eating;
+            pacState.Play();
+        } else if (!isMoving && pacState.isPlaying && !isEating) {
             pacState.Stop();
         }
         
