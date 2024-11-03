@@ -6,7 +6,7 @@ public class CherryController : MonoBehaviour
 {
     public GameObject bonus;
     private float timeInterval = 10.0f;
-    private float speed = 0.1f;
+    private float speed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
