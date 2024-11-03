@@ -8,8 +8,8 @@ public class PacStudentController : MonoBehaviour
     private Vector2 endPos;
     private float t = 0.0f;
     private float speed = 2.0f;
-    private Vector2 lastInput;
-    private Vector2 currentInput;
+    private Vector2 lastInput = Vector2.zero;
+    private Vector2 currentInput = Vector2.zero;
     private int[,] levelMap = {
             {1,2,2,2,2,2,2,2,2,2,2,2,2,7,7,2,2,2,2,2,2,2,2,2,2,2,2,1},
             {2,5,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5,5,5,5,5,5,5,2},
@@ -43,6 +43,8 @@ public class PacStudentController : MonoBehaviour
         };
     private int mapRow, mapCol;
     public Animator animatorController;
+    public MusicManager musicManager;
+    private bool isMoving = false;
 
     void Start()
     {   
@@ -63,7 +65,7 @@ public class PacStudentController : MonoBehaviour
             lastInput = Vector2.right;
         } 
 
-        if (t == 0) {
+        if (t == 0 && lastInput != Vector2.zero) {
             if (TryMovePacStudent(lastInput)) {
                 currentInput = lastInput;
             } else {
@@ -74,12 +76,15 @@ public class PacStudentController : MonoBehaviour
         if (t > 0) {
             t += speed * Time.deltaTime;
             transform.position = Vector2.Lerp(startPos, endPos, t);
-            PlayAnimation();
+            isMoving = true;
 
             if (t >= 1.0f) {
                 transform.position = endPos;
                 t = 0.0f;
+                isMoving = false;
             }
+            PlayAnimation();
+            musicManager.PlayMovingAudio(isMoving);
         }
     }
 
@@ -119,17 +124,9 @@ public class PacStudentController : MonoBehaviour
         animatorController.ResetTrigger("GoDown");
 
         if (y == 0) {
-            if (x > 0) {
-                animatorController.SetTrigger("GoRight");
-            } else {
-                animatorController.SetTrigger("GoLeft");
-            }
+            animatorController.SetTrigger(x > 0 ? "GoRight" : "GoLeft");
         } else {
-            if (y > 0) {
-                animatorController.SetTrigger("GoUp");
-            } else {
-                animatorController.SetTrigger("GoDown");
-            }
+            animatorController.SetTrigger(y > 0 ? "GoUp" : "GoDown");
         }
     }
 }

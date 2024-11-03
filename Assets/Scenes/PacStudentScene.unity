@@ -27522,6 +27522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorController: {fileID: 1002655847}
+  musicManager: {fileID: 543208890}
 --- !u!1 &1004466676
 GameObject:
   m_ObjectHideFlags: 0
