@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 public class PacStudentController : MonoBehaviour
@@ -55,6 +57,7 @@ public class PacStudentController : MonoBehaviour
 
     void Update()
     {
+        Teleport();
         if (Input.GetKeyDown(KeyCode.W)) {
             lastInput = Vector2.up;
         } else if (Input.GetKeyDown(KeyCode.A)) {
@@ -100,7 +103,7 @@ public class PacStudentController : MonoBehaviour
             endPos = startPos + direction;
             t = 0.001f;
             return true;
-        }
+        } 
 
         return false;
     }
@@ -135,6 +138,21 @@ public class PacStudentController : MonoBehaviour
             animatorController.SetTrigger(x > 0 ? "GoRight" : "GoLeft");
         } else {
             animatorController.SetTrigger(y > 0 ? "GoUp" : "GoDown");
+        }
+    }
+
+    private void Teleport() {
+        Vector3 leftmost = new Vector3(-10.45f, -2.3f, 0.0f);
+        Vector3 rightmost = new Vector3(16.55f, -2.3f, 0.0f);
+
+        if (Mathf.Approximately(transform.position.y, -2.3f)) {
+            if(Mathf.Approximately(transform.position.x, leftmost.x)) {
+                transform.position = rightmost;
+                mapCol = levelMap.GetLength(1) - 1;
+            } else if (Mathf.Approximately(transform.position.x, rightmost.x)) {
+                transform.position = leftmost;
+                mapCol = 0;
+            }
         }
     }
 }
