@@ -27521,7 +27521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b0f2637141d41d6866d7d2fb375678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGenerator: {fileID: 519420033}
+  animatorController: {fileID: 1002655847}
 --- !u!1 &1004466676
 GameObject:
   m_ObjectHideFlags: 0

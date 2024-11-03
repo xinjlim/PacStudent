@@ -42,6 +42,7 @@ public class PacStudentController : MonoBehaviour
             {1,2,2,2,2,2,2,2,2,2,2,2,2,7,7,2,2,2,2,2,2,2,2,2,2,2,2,1}
         };
     private int mapRow, mapCol;
+    public Animator animatorController;
 
     void Start()
     {   
@@ -73,6 +74,7 @@ public class PacStudentController : MonoBehaviour
         if (t > 0) {
             t += speed * Time.deltaTime;
             transform.position = Vector2.Lerp(startPos, endPos, t);
+            PlayAnimation();
 
             if (t >= 1.0f) {
                 transform.position = endPos;
@@ -105,5 +107,29 @@ public class PacStudentController : MonoBehaviour
 
         int sprite = levelMap[row, col];
         return sprite == 0 || sprite == 5 || sprite == 6;
+    }
+
+    private void PlayAnimation() {
+        float y = endPos.y - startPos.y;
+        float x = endPos.x - startPos.x;
+
+        animatorController.ResetTrigger("GoRight");
+        animatorController.ResetTrigger("GoLeft");
+        animatorController.ResetTrigger("GoUp");
+        animatorController.ResetTrigger("GoDown");
+
+        if (y == 0) {
+            if (x > 0) {
+                animatorController.SetTrigger("GoRight");
+            } else {
+                animatorController.SetTrigger("GoLeft");
+            }
+        } else {
+            if (y > 0) {
+                animatorController.SetTrigger("GoUp");
+            } else {
+                animatorController.SetTrigger("GoDown");
+            }
+        }
     }
 }
