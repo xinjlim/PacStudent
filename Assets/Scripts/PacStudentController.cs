@@ -47,17 +47,20 @@ public class PacStudentController : MonoBehaviour
     public Animator animatorController;
     public MusicManager musicManager;
     private bool isMoving = false;
+    public ParticleSystem collisionEffect;
 
     void Start()
     {   
         transform.position = new Vector2(-9.45f, 10.7f);
         mapRow = 1;
         mapCol = 1;
+        collisionEffect.Stop();
     }
 
     void Update()
     {
         Teleport();
+
         if (Input.GetKeyDown(KeyCode.W)) {
             lastInput = Vector2.up;
         } else if (Input.GetKeyDown(KeyCode.A)) {
@@ -103,7 +106,7 @@ public class PacStudentController : MonoBehaviour
             endPos = startPos + direction;
             t = 0.001f;
             return true;
-        } 
+        }
 
         return false;
     }

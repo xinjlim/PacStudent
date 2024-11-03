@@ -23,7 +23,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        wallCollision.Stop();
+        
     }
 
     public void PlayNormalState() {
